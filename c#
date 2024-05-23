@@ -1,0 +1,62 @@
+ing System;
+
+public class BruttoNetto{
+
+     public static void Main(){
+      do { 
+
+Console.WriteLine("Netto(N) oder Brutto(B)?");
+string antwort = Console.ReadLine();
+if(antwort == "B")
+{
+        Console.WriteLine("Preis: ");
+        double bruttoPreis = Convert.ToDouble(Console.ReadLine());
+        double nettoPreis = bruttoPreis / 1.2;
+        double mwst = bruttoPreis / 6;
+
+        Console.WriteLine(" Netto: " + nettoPreis);
+        Console.WriteLine(" +MWST: " + mwst);
+        Console.WriteLine("----------------------------");
+        Console.WriteLine("Brutto: " + bruttoPreis);
+        Console.WriteLine("Wollen Sie nochmal(J/N): ");
+        string abfrage = Console.ReadLine();
+        if(abfrage == "N")
+        {
+            break;
+        }else if (abfrage == "J")
+        {
+            continue;
+        }
+    }
+else if (antwort == "N")
+{
+
+        Console.WriteLine("Preis: ");
+    double nettoPreis = Convert.ToDouble(Console.ReadLine());
+    double bruttoPreis = nettoPreis * 1.2;
+    double mwst = bruttoPreis / 6;
+
+     Console.WriteLine(" Netto: " + nettoPreis);
+    Console.WriteLine(" +MWST: " + mwst);
+        Console.WriteLine("----------------------------");
+        Console.WriteLine("Brutto: " + bruttoPreis);
+        Console.WriteLine("Wollen Sie nochmal(J/N): ");
+        string abfrage = Console.ReadLine();
+        if (abfrage == "N")
+        {
+            break;
+        }
+        else if (abfrage == "J")
+        {
+            continue;
+        }
+    }
+else 
+{
+
+    continue;
+}
+}while(true);
+
+     }
+}
